@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Layout_exercise">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageButton
+                        android:id="@+id/Send"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@color/amour"
+                        android:contentDescription="@string/descSend"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/send"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/Instagram"
+                        app:layout_constraintHorizontal_bias="0.1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/Instagram"
+                        android:layout_width="280dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:fontFamily="@font/title"
+                        android:text=" Instagram"
+                        android:textAlignment="center"
+                        android:textSize="60sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/Cam"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/Send"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/Cam"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="12dp"
+                        android:background="@color/amour"
+                        android:contentDescription="@string/descCam"
+                        android:padding="10dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/cam"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.9"
+                        app:layout_constraintStart_toEndOf="@+id/Instagram"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+
+
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="142dp"
+                android:layout_marginBottom="0dp">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="140dp">
+
+
+                    <LinearLayout
+                        android:layout_width="127dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/f1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/pic1" />
+
+                        <TextView
+                            android:id="@+id/n1"
+                            android:textSize="12sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:gravity="center"
+                            android:text="@string/names" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/f2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/pic2" />
+
+                        <TextView
+                            android:id="@+id/n2"
+                            android:textSize="12sp"
+                            android:layout_width="127dp"
+                            android:layout_height="25dp"
+                            android:gravity="center"
+                            android:text="@string/names" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/f3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/pic3" />
+
+                        <TextView
+                            android:id="@+id/n3"
+                            android:textSize="12sp"
+                            android:layout_width="127dp"
+                            android:layout_height="25dp"
+                            android:gravity="center"
+                            android:text="@string/names" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/f4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/pic4" />
+
+                        <TextView
+                            android:id="@+id/n4"
+                            android:textSize="12sp"
+                            android:layout_width="127dp"
+                            android:layout_height="25dp"
+                            android:gravity="center"
+                            android:text="@string/names" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="127dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/f6"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/pic6" />
+
+                        <TextView
+                            android:id="@+id/n6"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:gravity="center"
+                            android:text="yug231" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="127dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/f7"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/pic7" />
+
+                        <TextView
+                            android:id="@+id/n7"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:gravity="center"
+                            android:text="miyaee" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="127dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/f8"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/pic8" />
+
+                        <TextView
+                            android:id="@+id/n8"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:gravity="center"
+                            android:text="yug231" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="127dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/f9"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/pic9" />
+
+                        <TextView
+                            android:id="@+id/n9"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:gravity="center"
+                            android:text="ehyeh23" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="127dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/f10"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/pic10" />
+
+                        <TextView
+                            android:id="@+id/n10"
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:gravity="center"
+                            android:text="naniie23" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical">
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/profpic1"
+                        android:layout_width="54dp"
+                        android:layout_height="match_parent"
+                        android:paddingTop="5sp"
+                        android:src="@drawable/pngegg" />
+
+                    <TextView
+                        android:id="@+id/name1"
+                        android:layout_width="224dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/robotobold"
+                        android:paddingStart="10sp"
+                        android:paddingTop="10sp"
+                        android:text="RAwr"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <ImageButton
+                        android:id="@+id/choices1"
+                        android:layout_width="48sp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/amour"
+                        android:contentDescription="@string/ICCL"
+                        android:padding="8sp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/dots" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="300sp"
+                    android:src="@drawable/po1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40sp"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/LoveBut1"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@color/amour"
+                        android:contentDescription="@string/ICCL"
+                        android:padding="12dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/love" />
+
+                    <ImageButton
+                        android:id="@+id/ComBut1"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@color/amour"
+                        android:contentDescription="@string/ICCL"
+                        android:padding="12dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/com" />
+
+                    <ImageButton
+                        android:id="@+id/shareBut1"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginRight="210dp"
+                        android:background="@color/amour"
+                        android:contentDescription="@string/ICCL"
+                        android:padding="12dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/share" />
+
+                    <ImageButton
+                        android:id="@+id/FavBut1"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:background="@color/amour"
+                        android:contentDescription="@string/ICCL"
+                        android:padding="12dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/favorite" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/profpic2"
+                        android:layout_width="54dp"
+                        android:layout_height="match_parent"
+                        android:paddingTop="5sp"
+                        android:src="@drawable/prof2" />
+
+                    <TextView
+                        android:id="@+id/name2"
+                        android:layout_width="224dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/robotobold"
+                        android:paddingStart="10sp"
+                        android:paddingTop="10sp"
+                        android:text="Meow"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <ImageButton
+                        android:id="@+id/choices2"
+                        android:layout_width="48sp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/amour"
+                        android:padding="8sp"
+                        android:contentDescription="@string/ICCL"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/dots" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/post2"
+                    android:layout_width="match_parent"
+                    android:layout_height="300sp"
+                    android:src="@drawable/po2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40sp"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/LoveBut2"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@color/amour"
+                        android:contentDescription="@string/ICCL"
+                        android:padding="12dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/love" />
+
+                    <ImageButton
+                        android:id="@+id/ComBut2"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/com"
+                        android:scaleType="fitCenter"
+                        android:background="@color/amour"
+                        android:contentDescription="@string/ICCL"
+                        android:padding="12dp"
+                        />
+
+                    <ImageButton
+                        android:id="@+id/shareBut2"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginRight="210dp"
+                        android:background="@color/amour"
+                        android:contentDescription="@string/ICCL"
+                        android:padding="12dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/share" />
+
+                    <ImageButton
+                        android:id="@+id/FavBut2"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:background="@color/amour"
+                        android:contentDescription="@string/ICCL"
+                        android:padding="12dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/favorite" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

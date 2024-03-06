@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="descCam">Take a Picture</string>
+    <string name="descSend">Send a message</string>
+    <string name="ICCL">Bruh</string>
+    <string name="names">User</string>
+    <string name="btn1">Open</string>
+    <string name="btn2">Disappear</string>
+    <string name="btn3">Toast</string>
+    <string name="btn4">Close</string>
+    <string name="btn5">Change BG</string>
+    <string name="btn6">Random Button BG</string>
+    <string name="CalcTit">+-Calculator-+</string>
+
+
+</resources>
