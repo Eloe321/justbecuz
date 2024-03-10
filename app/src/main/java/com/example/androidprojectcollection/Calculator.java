@@ -218,7 +218,7 @@ public class Calculator extends AppCompatActivity {
                 try {
                     double result = ActualResult(expression);
                     String formattedResult = formatResult(result);
-                    System.out.println(formattedResult);// Format the result
+                    System.out.println(formattedResult);
                     Recall.setText("");
                     Result.setText(formattedResult);
 
@@ -231,20 +231,20 @@ public class Calculator extends AppCompatActivity {
 
 
     private double evaluateExpression (String expression){
-        // Split the expression into numbers and operators
+
         String[] tokens = expression.split("(?=[+\\-x/])|(?<=[+\\-x/])");
 
-        // Initialize variables
+
         double result = Double.parseDouble(tokens[0]);
         char operator = ' ';
 
-        // Iterate through the tokens to perform the calculations
+
         for (int i = 1; i < tokens.length; i++) {
-            // If the token is an operator, store it for the next iteration
+
             if (tokens[i].matches("[+\\-x/]")) {
                 operator = tokens[i].charAt(0);
             } else {
-                // If the token is a number, perform the operation based on the stored operator
+
                 double operand = Double.parseDouble(tokens[i]);
                 switch (operator) {
                     case '+':
@@ -257,7 +257,7 @@ public class Calculator extends AppCompatActivity {
                         result *= operand;
                         break;
                     case '/':
-                        // Check for division by zero
+
                         if (operand == 0) {
                             throw new ArithmeticException("Division by zero");
                         }
@@ -274,8 +274,8 @@ public class Calculator extends AppCompatActivity {
             // If the result is an integer, remove the decimal part
             return String.format("%d", (long) result);
         } else {
-            // If the result has decimal places, display it as it is
-            DecimalFormat decimalFormat = new DecimalFormat("#.##########"); // Adjust the number of decimal places as needed
+
+            DecimalFormat decimalFormat = new DecimalFormat("#.##########");
             return decimalFormat.format(result);
         }
     }
@@ -297,27 +297,27 @@ public class Calculator extends AppCompatActivity {
     private Double ActualResult (String expression){
         expression = expression.replaceAll("\\s+", "");
 
-        // Split the expression into numbers, operators, and parentheses
+
         String[] tokens = expression.split("(?<=[-+x/()])|(?=[-+x/()])");
 
-        // Use two stacks for numbers and operators
+
         Stack<Double> numbers = new Stack<>();
         Stack<Character> operators = new Stack<>();
 
-        // Iterate through the tokens
+
         for (String token : tokens) {
-            // Handle numbers
+
             if (token.matches("[0-9]+")) {
                 numbers.push(Double.parseDouble(token));
             } else if (token.equals("(")) {
                 operators.push(token.charAt(0));
             } else if (token.equals(")")) {
-                // Evaluate expression within parentheses
+
                 while (!operators.isEmpty() && operators.peek() != '(') {
                     evaluateOperator(numbers, operators);
                 }
                 operators.pop(); // Remove the '('
-            } else { // Handle operators
+            } else {
                 while (!operators.isEmpty() && Precedence(token.charAt(0), operators.peek())) {
                     evaluateOperator(numbers, operators);
                 }
@@ -361,7 +361,7 @@ public class Calculator extends AppCompatActivity {
         if (op2 == '(' || op2 == ')') {
             return false;
         }
-        return (op1 != 'x' && op1 != '/') || (op2 != '+' && op2 != '-'); // op1 does not have precedence over op2
+        return (op1 != 'x' && op1 != '/') || (op2 != '+' && op2 != '-');
     }
 }
 
