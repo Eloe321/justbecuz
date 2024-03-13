@@ -15,10 +15,10 @@
         <TextView
             android:id="@+id/titleCalc"
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="wrap_content"
             android:text="@string/CalcTit"
             android:textAlignment="center"
-            android:textSize="40sp" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/editNum1"
@@ -32,7 +32,7 @@
         <TextView
             android:id="@+id/Rev"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="46dp"
             android:layout_marginRight="10dp"
             android:text=""
             android:textAlignment="textEnd"
@@ -58,146 +58,199 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:orientation="horizontal">
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                >
+
 
                 <Button
                     android:id="@+id/num1"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:text="1" />
+                    android:backgroundTint="@color/forNumbers"
+                    android:text="1"
+                    android:textSize="20sp" />
 
                 <Button
                     android:id="@+id/num2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:text="2" />
+                    android:backgroundTint="@color/forNumbers"
+                    android:text="2"
+                    android:textSize="20sp" />
 
                 <Button
                     android:id="@+id/num3"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:text="3" />
+                    android:backgroundTint="@color/forNumbers"
+                    android:text="3"
+                    android:textSize="20sp" />
 
                 <Button
                     android:id="@+id/opPlus"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:text="+" />
+                    android:backgroundTint="@color/forOperators"
+                    android:text="+"
+                    android:textSize="20sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/num4"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize = "20sp"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/forNumbers"
                     android:text="4" />
 
                 <Button
                     android:id="@+id/num5"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:textSize = "20sp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/forNumbers"
                     android:text="5" />
 
                 <Button
                     android:id="@+id/num6"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
+                    android:textSize = "20sp"
+                    android:backgroundTint="@color/forNumbers"
                     android:text="6" />
 
                 <Button
                     android:id="@+id/opMinus"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize = "20sp"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/forOperators"
                     android:text="-" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/num7"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:textSize = "20sp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/forNumbers"
                     android:text="7" />
 
                 <Button
                     android:id="@+id/num8"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:textSize = "20sp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/forNumbers"
                     android:text="8" />
 
                 <Button
                     android:id="@+id/num9"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:textSize = "20sp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/forNumbers"
                     android:text="9" />
 
                 <Button
                     android:id="@+id/opMult"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:textSize = "20sp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/forOperators"
                     android:text="*" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/num0"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize = "20sp"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/forNumbers"
                     android:text="0" />
 
                 <Button
                     android:id="@+id/decimal"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize = "20sp"
                     android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:backgroundTint="@color/forOperators"
                     android:text="." />
 
                 <Button
                     android:id="@+id/opDiv"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize = "20sp"
                     android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:backgroundTint="@color/forOperators"
                     android:text="/" />
 
                 <Button
                     android:id="@+id/Equals"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize = "20sp"
+                    android:layout_margin="5dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/forOperators"
                     android:text="=" />
             </LinearLayout>
         </LinearLayout>

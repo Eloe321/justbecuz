@@ -32,6 +32,8 @@ public class Calculator extends AppCompatActivity {
     Boolean NumAv = false;
     Boolean checkDec = true;
 
+    String checkLast = "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,21 +64,25 @@ public class Calculator extends AppCompatActivity {
             public void onClick(View view) {
                 StringBuilder tmp = new StringBuilder(Recall.getText());
                 int ctr = tmp.length() - 1;
+
                 if (tmp.length() != 0) {
-                    // Check if the last character is an operator and the character before it is not '0'
-                    if ((tmp.charAt(ctr) == '+' || tmp.charAt(ctr) == '-' || tmp.charAt(ctr) == 'x' || tmp.charAt(ctr) == '/') && tmp.charAt(ctr - 1) != '0') {
+                    if ((tmp.charAt(ctr) == '+' || tmp.charAt(ctr) == '-' || tmp.charAt(ctr) == 'x' || tmp.charAt(ctr) == '/') ) {
                         Recall.append("0");
+                        if(checkLast.isEmpty())
+                            checkLast = "0";
                         NumAv = true;
                         updateResult();
-                    } else if(tmp.charAt(ctr) != '0' && tmp.charAt(ctr) != '.') {
+                    } else if(checkLast.equals("1") || !checkDec) {
                         Recall.append("0");
+                        if(checkLast.isEmpty())
+                            checkLast = "0";
                         NumAv = true;
                         updateResult();
                     }
-                } else {
+                }else{
                     Recall.append("0");
+                    checkLast = "0";
                     NumAv = true;
-                    updateResult();
                 }
             }
         });
@@ -85,8 +91,18 @@ public class Calculator extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Recall.append("1");
 
+
+                if(checkLast.isEmpty()) {
+                    checkLast = "1";
+                    Recall.append("1");
+                }
+                else if(checkLast.equals("0") && checkDec) {
+                    StringBuilder tmp = new StringBuilder(Recall.getText());
+                    Recall.setText(tmp.substring(0, tmp.length()-1) + "1");
+                    checkLast = "1";
+                }else
+                    Recall.append("1");
                 NumAv = true;
                 updateResult();
             }
@@ -94,8 +110,16 @@ public class Calculator extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Recall.append("2");
-
+                if(checkLast.isEmpty()) {
+                    checkLast = "1";
+                    Recall.append("2");
+                }
+                else if(checkLast.equals("0") && checkDec) {
+                    StringBuilder tmp = new StringBuilder(Recall.getText());
+                    Recall.setText(tmp.substring(0, tmp.length()-1) + "2");
+                    checkLast = "1";
+                }else
+                    Recall.append("2");
                 NumAv = true;
                 updateResult();
             }
@@ -103,8 +127,17 @@ public class Calculator extends AppCompatActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Recall.append("3");
 
+                if(checkLast.isEmpty()) {
+                    checkLast = "1";
+                    Recall.append("3");
+                }
+                else if(checkLast.equals("0") && checkDec) {
+                    StringBuilder tmp = new StringBuilder(Recall.getText());
+                    Recall.setText(tmp.substring(0, tmp.length()-1) + "3");
+                    checkLast = "1";
+                }else
+                    Recall.append("3");
                 NumAv = true;
                 updateResult();
             }
@@ -112,8 +145,16 @@ public class Calculator extends AppCompatActivity {
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Recall.append("4");
-
+                if(checkLast.isEmpty()) {
+                    checkLast = "1";
+                    Recall.append("4");
+                }
+                else if(checkLast.equals("0") && checkDec) {
+                    StringBuilder tmp = new StringBuilder(Recall.getText());
+                    Recall.setText(tmp.substring(0, tmp.length()-1) + "4");
+                    checkLast = "1";
+                }else
+                    Recall.append("4");
                 NumAv = true;
                 updateResult();
             }
@@ -121,8 +162,16 @@ public class Calculator extends AppCompatActivity {
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Recall.append("5");
-
+                if(checkLast.isEmpty()) {
+                    checkLast = "1";
+                    Recall.append("5");
+                }
+                else if(checkLast.equals("0") && checkDec) {
+                    StringBuilder tmp = new StringBuilder(Recall.getText());
+                    Recall.setText(tmp.substring(0, tmp.length()-1) + "5");
+                    checkLast = "1";
+                }else
+                    Recall.append("5");
                 NumAv = true;
                 updateResult();
             }
@@ -130,8 +179,16 @@ public class Calculator extends AppCompatActivity {
         btn6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Recall.append("6");
-
+                if(checkLast.isEmpty()) {
+                    checkLast = "1";
+                    Recall.append("6");
+                }
+                else if(checkLast.equals("0") && checkDec) {
+                    StringBuilder tmp = new StringBuilder(Recall.getText());
+                    Recall.setText(tmp.substring(0, tmp.length()-1) + "6");
+                    checkLast = "1";
+                }else
+                    Recall.append("6");
                 NumAv = true;
                 updateResult();
             }
@@ -139,7 +196,16 @@ public class Calculator extends AppCompatActivity {
         btn7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Recall.append("7");
+                if(checkLast.isEmpty()) {
+                    checkLast = "1";
+                    Recall.append("7");
+                }
+                else if(checkLast.equals("0") && checkDec) {
+                    StringBuilder tmp = new StringBuilder(Recall.getText());
+                    Recall.setText(tmp.substring(0, tmp.length()-1) + "7");
+                    checkLast = "1";
+                }else
+                    Recall.append("7");
 
                 NumAv = true;
                 updateResult();
@@ -148,7 +214,16 @@ public class Calculator extends AppCompatActivity {
         btn8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Recall.append("8");
+                if(checkLast.isEmpty()) {
+                    checkLast = "1";
+                    Recall.append("8");
+                }
+                else if(checkLast.equals("0") && checkDec) {
+                    StringBuilder tmp = new StringBuilder(Recall.getText());
+                    Recall.setText(tmp.substring(0, tmp.length()-1) + "8");
+                    checkLast = "1";
+                }else
+                    Recall.append("8");
                 NumAv = true;
                 updateResult();
             }
@@ -156,7 +231,16 @@ public class Calculator extends AppCompatActivity {
         btn9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Recall.append("9");
+                if(checkLast.isEmpty()) {
+                    checkLast = "1";
+                    Recall.append("9");
+                }
+                else if(checkLast.equals("0") && checkDec) {
+                    StringBuilder tmp = new StringBuilder(Recall.getText());
+                    Recall.setText(tmp.substring(0, tmp.length()-1) + "9");
+                    checkLast = "1";
+                }else
+                    Recall.append("9");
 
                 NumAv = true;
                 updateResult();
@@ -170,8 +254,10 @@ public class Calculator extends AppCompatActivity {
                 int ctr = tmp.length() - 1;
                 if (tmp.charAt(ctr) == '-' || tmp.charAt(ctr) == 'x' || tmp.charAt(ctr) == '/' || tmp.charAt(ctr) == '.') {
                     Recall.setText(tmp.substring(0, ctr) + "+");
+                    NumAv = false;
                 } else if (NumAv) {
                     Recall.append("+");
+                    checkLast = "";
                     NumAv = false;
                     checkDec= true;
                 }
@@ -187,8 +273,10 @@ public class Calculator extends AppCompatActivity {
                 int ctr = tmp.length() - 1;
                 if (tmp.charAt(ctr) == '+' || tmp.charAt(ctr) == 'x' || tmp.charAt(ctr) == '/'|| tmp.charAt(ctr) == '.') {
                     Recall.setText(tmp.substring(0, ctr) + "-");
+                    NumAv = false;
                 } else if (NumAv) {
                     Recall.append("-");
+                    checkLast = "";
                     checkDec= true;
                     NumAv = false;
                 }
@@ -202,8 +290,10 @@ public class Calculator extends AppCompatActivity {
                 int ctr = tmp.length() - 1;
                 if (tmp.charAt(ctr) == '+' || tmp.charAt(ctr) == '-' || tmp.charAt(ctr) == '/'|| tmp.charAt(ctr) == '.') {
                     Recall.setText(tmp.substring(0, (tmp.length() - 1)) + "x");
+                    NumAv = false;
                 } else if (NumAv) {
                     Recall.append("x");
+                    checkLast = "";
                     checkDec= true;
                     NumAv = false;
                 }
@@ -217,8 +307,10 @@ public class Calculator extends AppCompatActivity {
                 int ctr = tmp.length() - 1;
                 if (tmp.charAt(ctr) == '+' || tmp.charAt(ctr) == '-' || tmp.charAt(ctr) == 'x' || tmp.charAt(ctr) == '.') {
                     Recall.setText(tmp.substring(0, (tmp.length() - 1)) + "/");
+                    NumAv = false;
                 } else if (NumAv) {
                     Recall.append("/");
+                    checkLast = "";
                     NumAv = false;
                     checkDec= true;
                 }
@@ -228,9 +320,14 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 StringBuilder tmp = new StringBuilder(Recall.getText());
-                if (NumAv && checkDec && tmp.charAt(tmp.length() - 1) != '.' && (tmp.charAt(tmp.length() - 1) != '+' && tmp.charAt(tmp.length() - 1) != '-' && tmp.charAt(tmp.length() - 1) != 'x' && tmp.charAt(tmp.length() - 1) != '/') ){
+                if(tmp.charAt(tmp.length() - 1) == '.'){
+                    Recall.setText(tmp.substring(0,tmp.length()-1));
+                    checkDec = true;
+                }
+                else if (NumAv && checkDec && tmp.charAt(tmp.length() - 1) != '.' && (tmp.charAt(tmp.length() - 1) != '+' && tmp.charAt(tmp.length() - 1) != '-' && tmp.charAt(tmp.length() - 1) != 'x' && tmp.charAt(tmp.length() - 1) != '/') ){
                     Recall.append(".");
                     checkDec = false;
+                    NumAv = true;
                 } else if (checkDec && !NumAv) {
                     Recall.append("0.");
                     NumAv = true;
@@ -243,23 +340,25 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 StringBuilder tmp = new StringBuilder(Recall.getText());
-                System.out.println("Da number: "+tmp);
-                System.out.println("is it empty? "  + tmp.toString().isEmpty());
-                if (!tmp.toString().isEmpty() && tmp.charAt(tmp.length() - 1) != '+' && tmp.charAt(tmp.length() - 1) != '-' && tmp.charAt(tmp.length() - 1) != 'x' && tmp.charAt(tmp.length() - 1) != '/' ) {
+                if (!tmp.toString().isEmpty() && tmp.charAt(tmp.length() - 1) != '+' && tmp.charAt(tmp.length() - 1) != '-' && tmp.charAt(tmp.length() - 1) != 'x' && tmp.charAt(tmp.length() - 1) != '/') {
                     String expression = Recall.getText().toString();
                     try {
                         double result = ActualResult(expression);
                         String formattedResult = formatResult(result);
-                        System.out.println(formattedResult);
                         Recall.setText("");
                         Result.setText(formattedResult);
 
+                        checkLast = "";
+                        checkDec = true;
                     } catch (Exception e) {
-                        Result.setText("Error");
+                        Result.setText("Invalid");
+                        checkLast = "";
+                        checkDec = true;
                     }
                 }
             }
         });
+
 
     }
 
@@ -294,6 +393,7 @@ public class Calculator extends AppCompatActivity {
 
                         if (operand == 0) {
                             Result.setText("");
+
                             throw new ArithmeticException("Division by zero");
                         }
                         result /= operand;
@@ -329,29 +429,24 @@ public class Calculator extends AppCompatActivity {
         }
     }
 
-    private Double ActualResult (String expression){
+    private Double ActualResult(String expression) {
         expression = expression.replaceAll("\\s+", "");
 
-
         String[] tokens = expression.split("(?<=[-+x/()])|(?=[-+x/()])");
-
 
         Stack<Double> numbers = new Stack<>();
         Stack<Character> operators = new Stack<>();
 
-
         for (String token : tokens) {
-
-            if (token.matches("[0-9]+")) {
+            if (token.matches("\\d+(\\.\\d+)?")) {
                 numbers.push(Double.parseDouble(token));
             } else if (token.equals("(")) {
                 operators.push(token.charAt(0));
             } else if (token.equals(")")) {
-
                 while (!operators.isEmpty() && operators.peek() != '(') {
                     evaluateOperator(numbers, operators);
                 }
-                operators.pop(); // Remove the '('
+                operators.pop();
             } else {
                 while (!operators.isEmpty() && Precedence(token.charAt(0), operators.peek())) {
                     evaluateOperator(numbers, operators);
@@ -364,8 +459,8 @@ public class Calculator extends AppCompatActivity {
             evaluateOperator(numbers, operators);
         }
         return numbers.pop();
-
     }
+
     private void evaluateOperator (Stack < Double > numbers, Stack < Character > operators){
         char operator = operators.pop();
         double num2 = numbers.pop();
@@ -384,6 +479,7 @@ public class Calculator extends AppCompatActivity {
             case '/':
                 if (num2 == 0) {
                     Recall.setText("");
+                    Result.setText("");
                     return;
                 }
                 result = num1 / num2;

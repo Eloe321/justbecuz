@@ -6,4 +6,6 @@
     <color name="purple_200">#CE93D1</color>
     <color name="purple_700">#7B1FA2</color>
     <color name="teal_200">#80CBC1</color>
+    <color name="forNumbers">#F4B860</color>
+    <color name="forOperators">#C83E4D</color>
 </resources>
