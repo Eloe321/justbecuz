@@ -30,6 +30,7 @@ public class Calculator extends AppCompatActivity {
     TextView Recall;
     TextView Result;
     Boolean NumAv = false;
+    Boolean checkDec = true;
 
 
     @Override
@@ -59,13 +60,28 @@ public class Calculator extends AppCompatActivity {
         btn0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!Recall.getText().toString().equals("0")) {
+                StringBuilder tmp = new StringBuilder(Recall.getText());
+                int ctr = tmp.length() - 1;
+                if (tmp.length() != 0) {
+                    // Check if the last character is an operator and the character before it is not '0'
+                    if ((tmp.charAt(ctr) == '+' || tmp.charAt(ctr) == '-' || tmp.charAt(ctr) == 'x' || tmp.charAt(ctr) == '/') && tmp.charAt(ctr - 1) != '0') {
+                        Recall.append("0");
+                        NumAv = true;
+                        updateResult();
+                    } else if(tmp.charAt(ctr) != '0' && tmp.charAt(ctr) != '.') {
+                        Recall.append("0");
+                        NumAv = true;
+                        updateResult();
+                    }
+                } else {
                     Recall.append("0");
+                    NumAv = true;
+                    updateResult();
                 }
-                NumAv = true;
-                updateResult(); // Call the method to update the result
             }
         });
+
+
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -123,8 +139,16 @@ public class Calculator extends AppCompatActivity {
         btn7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Recall.append("8");
+                Recall.append("7");
 
+                NumAv = true;
+                updateResult();
+            }
+        });
+        btn8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Recall.append("8");
                 NumAv = true;
                 updateResult();
             }
@@ -144,13 +168,12 @@ public class Calculator extends AppCompatActivity {
                 StringBuilder tmp = new StringBuilder();
                 tmp.append(Recall.getText());
                 int ctr = tmp.length() - 1;
-                if (tmp.charAt(ctr) == '-' || tmp.charAt(ctr) == 'x' || tmp.charAt(ctr) == '/') {
+                if (tmp.charAt(ctr) == '-' || tmp.charAt(ctr) == 'x' || tmp.charAt(ctr) == '/' || tmp.charAt(ctr) == '.') {
                     Recall.setText(tmp.substring(0, ctr) + "+");
                 } else if (NumAv) {
                     Recall.append("+");
-
-
                     NumAv = false;
+                    checkDec= true;
                 }
 
 
@@ -162,11 +185,11 @@ public class Calculator extends AppCompatActivity {
                 StringBuilder tmp = new StringBuilder();
                 tmp.append(Recall.getText());
                 int ctr = tmp.length() - 1;
-                if (tmp.charAt(ctr) == '+' || tmp.charAt(ctr) == 'x' || tmp.charAt(ctr) == '/') {
+                if (tmp.charAt(ctr) == '+' || tmp.charAt(ctr) == 'x' || tmp.charAt(ctr) == '/'|| tmp.charAt(ctr) == '.') {
                     Recall.setText(tmp.substring(0, ctr) + "-");
                 } else if (NumAv) {
                     Recall.append("-");
-
+                    checkDec= true;
                     NumAv = false;
                 }
             }
@@ -176,11 +199,12 @@ public class Calculator extends AppCompatActivity {
             public void onClick(View view) {
                 StringBuilder tmp = new StringBuilder();
                 tmp.append(Recall.getText());
-                if (tmp.charAt(tmp.length() - 1) == '+' || tmp.charAt(tmp.length() - 1) == '-' || tmp.charAt(tmp.length() - 1) == '/') {
+                int ctr = tmp.length() - 1;
+                if (tmp.charAt(ctr) == '+' || tmp.charAt(ctr) == '-' || tmp.charAt(ctr) == '/'|| tmp.charAt(ctr) == '.') {
                     Recall.setText(tmp.substring(0, (tmp.length() - 1)) + "x");
                 } else if (NumAv) {
                     Recall.append("x");
-
+                    checkDec= true;
                     NumAv = false;
                 }
             }
@@ -190,11 +214,13 @@ public class Calculator extends AppCompatActivity {
             public void onClick(View view) {
                 StringBuilder tmp = new StringBuilder();
                 tmp.append(Recall.getText());
-                if (tmp.charAt(tmp.length() - 1) == '+' || tmp.charAt(tmp.length() - 1) == '-' || tmp.charAt(tmp.length() - 1) == 'x') {
+                int ctr = tmp.length() - 1;
+                if (tmp.charAt(ctr) == '+' || tmp.charAt(ctr) == '-' || tmp.charAt(ctr) == 'x' || tmp.charAt(ctr) == '.') {
                     Recall.setText(tmp.substring(0, (tmp.length() - 1)) + "/");
                 } else if (NumAv) {
                     Recall.append("/");
                     NumAv = false;
+                    checkDec= true;
                 }
             }
         });
@@ -202,11 +228,13 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 StringBuilder tmp = new StringBuilder(Recall.getText());
-                if (NumAv && tmp.charAt(tmp.length() - 1) != '.') {
+                if (NumAv && checkDec && tmp.charAt(tmp.length() - 1) != '.' && (tmp.charAt(tmp.length() - 1) != '+' && tmp.charAt(tmp.length() - 1) != '-' && tmp.charAt(tmp.length() - 1) != 'x' && tmp.charAt(tmp.length() - 1) != '/') ){
                     Recall.append(".");
-                } else if (!NumAv) {
+                    checkDec = false;
+                } else if (checkDec && !NumAv) {
                     Recall.append("0.");
                     NumAv = true;
+                    checkDec = false;
                 }
 
             }
@@ -214,19 +242,25 @@ public class Calculator extends AppCompatActivity {
         btnEq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String expression = Recall.getText().toString();
-                try {
-                    double result = ActualResult(expression);
-                    String formattedResult = formatResult(result);
-                    System.out.println(formattedResult);
-                    Recall.setText("");
-                    Result.setText(formattedResult);
+                StringBuilder tmp = new StringBuilder(Recall.getText());
+                System.out.println("Da number: "+tmp);
+                System.out.println("is it empty? "  + tmp.toString().isEmpty());
+                if (!tmp.toString().isEmpty() && tmp.charAt(tmp.length() - 1) != '+' && tmp.charAt(tmp.length() - 1) != '-' && tmp.charAt(tmp.length() - 1) != 'x' && tmp.charAt(tmp.length() - 1) != '/' ) {
+                    String expression = Recall.getText().toString();
+                    try {
+                        double result = ActualResult(expression);
+                        String formattedResult = formatResult(result);
+                        System.out.println(formattedResult);
+                        Recall.setText("");
+                        Result.setText(formattedResult);
 
-                } catch (Exception e) {
-                    Result.setText("Error");
+                    } catch (Exception e) {
+                        Result.setText("Error");
+                    }
                 }
             }
         });
+
     }
 
 
@@ -259,6 +293,7 @@ public class Calculator extends AppCompatActivity {
                     case '/':
 
                         if (operand == 0) {
+                            Result.setText("");
                             throw new ArithmeticException("Division by zero");
                         }
                         result /= operand;
@@ -348,7 +383,8 @@ public class Calculator extends AppCompatActivity {
                 break;
             case '/':
                 if (num2 == 0) {
-                    throw new ArithmeticException("Division by zero");
+                    Recall.setText("");
+                    return;
                 }
                 result = num1 / num2;
                 break;

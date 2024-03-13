@@ -6,60 +6,60 @@
     android:layout_height="match_parent"
     tools:context=".Calculator">
 
-    <ScrollView
-        android:id="@+id/scrollView2"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="729dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="1dp">
+
+        <TextView
+            android:id="@+id/titleCalc"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:text="@string/CalcTit"
+            android:textAlignment="center"
+            android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/editNum1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/black"
+            android:textAlignment="textEnd"
+            android:textColor="@color/white"
+            tools:text="number" />
+
+        <TextView
+            android:id="@+id/Rev"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:text=""
+            android:textAlignment="textEnd"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/Result"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:layout_marginRight="10dp"
+            android:text=""
+            android:textAlignment="textEnd"
+            android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/editNum2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/black"
+            android:textAlignment="textEnd"
+            android:textColor="@color/white"
+            tools:text="number" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/titleCalc"
-                android:layout_width="match_parent"
-                android:layout_height="75dp"
-                android:text="@string/CalcTit"
-                android:textAlignment="center"
-                android:textSize="40sp" />
-            <TextView
-                android:id="@+id/editNum1"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:textColor="@color/white"
-                android:textAlignment="textEnd"
-                android:background="@color/black"
-                tools:text="number" />
-
-            <TextView
-                android:id="@+id/Rev"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:textSize="20sp"
-                android:text=""
-                android:textAlignment="textEnd" />
-            <TextView
-                android:id="@+id/Result"
-                android:layout_width="match_parent"
-                android:layout_height="67dp"
-                android:textSize="40sp"
-                android:text=""
-                android:textAlignment="textEnd" />
-            <TextView
-                android:id="@+id/editNum2"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:textColor="@color/white"
-                android:textAlignment="textEnd"
-                android:background="@color/black"
-                tools:text="number" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -200,7 +200,8 @@
                     android:layout_weight="1"
                     android:text="=" />
             </LinearLayout>
-
         </LinearLayout>
-    </ScrollView>
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
