@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Change">
+        <menu>
+            <item
+                android:id="@+id/txtSize"
+                android:title="Make Text Big Or Small?" />
+            <item
+                android:id="@+id/ColorChange"
+                android:title="Change Color" />
+            <item
+                android:id="@+id/NewText"
+                android:title="Change Text" />
+            <item
+                android:id="@+id/weird"
+                android:title="Weird New Button" />
+            <item
+                android:id="@+id/Rot"
+                android:title="Rotate" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/Reset"
+        android:title="Reset" />
+    <item
+        android:id="@+id/Exit"
+        android:title="Exit" />
+</menu>

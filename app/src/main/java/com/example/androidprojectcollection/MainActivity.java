@@ -12,13 +12,18 @@ public class MainActivity extends AppCompatActivity {
     Button bu2;
     Button bu3;
     Button bu4;
+
+    Button bu5;
+    Button bu6;
+    Button bu7;
+    Button bu8;
     Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bu1 = (Button) findViewById(R.id.change);
+        bu1 = (Button) findViewById(R.id.LayEx);
         bu1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -27,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        bu2 = (Button) findViewById(R.id.butbut);
+        bu2 = (Button) findViewById(R.id.BtnExer);
         bu2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -50,5 +55,25 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        bu6 = findViewById(R.id.Connect3);
+        bu6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intent = new Intent(MainActivity.this, Connect3.class);
+                startActivity(intent);
+            }
+        });
+
+        bu7 = findViewById(R.id.PassExer);
+        bu7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intent = new Intent(MainActivity.this, PassingIntentsExercise.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }

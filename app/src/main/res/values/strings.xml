@@ -11,6 +11,8 @@
     <string name="btn5">Change BG</string>
     <string name="btn6">Random Button BG</string>
     <string name="CalcTit">+-Calculator-+</string>
+    <string name="insert">INSERT HERE</string>
+    <string name="reset">Reset Game</string>
 
 
 </resources>

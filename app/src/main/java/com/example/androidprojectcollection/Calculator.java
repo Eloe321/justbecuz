@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DecimalFormat;
 import java.util.Stack;
@@ -39,6 +40,7 @@ public class Calculator extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
+        Toast.makeText(getApplicationContext(), "Welcome To The Calculator", Toast.LENGTH_LONG).show();
         Recall = findViewById(R.id.Rev);
         Result = findViewById(R.id.Result);
         btn0 = findViewById(R.id.num0);
@@ -249,8 +251,12 @@ public class Calculator extends AppCompatActivity {
         btnPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                StringBuilder tmp = new StringBuilder();
+                if(Recall.getText().equals("")){
+                    return;
+                } StringBuilder tmp = new StringBuilder();
+
                 tmp.append(Recall.getText());
+
                 int ctr = tmp.length() - 1;
                 if (tmp.charAt(ctr) == '-' || tmp.charAt(ctr) == 'x' || tmp.charAt(ctr) == '/' || tmp.charAt(ctr) == '.') {
                     Recall.setText(tmp.substring(0, ctr) + "+");
@@ -268,8 +274,13 @@ public class Calculator extends AppCompatActivity {
         btnMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(Recall.getText().equals("")){
+                    return;
+                }
                 StringBuilder tmp = new StringBuilder();
+
                 tmp.append(Recall.getText());
+
                 int ctr = tmp.length() - 1;
                 if (tmp.charAt(ctr) == '+' || tmp.charAt(ctr) == 'x' || tmp.charAt(ctr) == '/'|| tmp.charAt(ctr) == '.') {
                     Recall.setText(tmp.substring(0, ctr) + "-");
@@ -285,8 +296,12 @@ public class Calculator extends AppCompatActivity {
         btnMult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(Recall.getText().equals("")){
+                    return;
+                }
                 StringBuilder tmp = new StringBuilder();
                 tmp.append(Recall.getText());
+
                 int ctr = tmp.length() - 1;
                 if (tmp.charAt(ctr) == '+' || tmp.charAt(ctr) == '-' || tmp.charAt(ctr) == '/'|| tmp.charAt(ctr) == '.') {
                     Recall.setText(tmp.substring(0, (tmp.length() - 1)) + "x");
@@ -302,6 +317,9 @@ public class Calculator extends AppCompatActivity {
         btnDiv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(Recall.getText().equals("")){
+                    return;
+                }
                 StringBuilder tmp = new StringBuilder();
                 tmp.append(Recall.getText());
                 int ctr = tmp.length() - 1;

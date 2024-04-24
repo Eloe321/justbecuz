@@ -5,12 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-public class Layout_exercise extends AppCompatActivity {
+public class Midterm extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_layout_exercise);
-        Toast.makeText(getApplicationContext(), "Welcome To Instagram!", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Welcome to Color Change!", Toast.LENGTH_LONG).show();
+        setContentView(R.layout.activity_midterm);
     }
 }

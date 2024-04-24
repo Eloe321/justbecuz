@@ -24,7 +24,7 @@ public class button_exercise extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_button_exercise);
-
+        Toast.makeText(getApplicationContext(), "Welcome To The Button Exercise", Toast.LENGTH_LONG).show();
         btn4 = (Button) findViewById(R.id.btnReturn);
         btn4.setOnClickListener(v -> {
             Intent back = new Intent(button_exercise.this, yeh.class);
